@@ -1,0 +1,77 @@
+/* Background styling */
+.upload-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(135deg, #1e3c72, #2a5298);
+    color: white;
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  /* Upload box */
+  .upload-box {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 40px;
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    max-width: 500px;
+    width: 90%;
+    text-align: center;
+  }
+  
+  /* Title */
+  .upload-title {
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  
+  /* Form input fields */
+  .upload-input, .upload-textarea, .upload-file {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border-radius: 8px;
+    border: none;
+    outline: none;
+    font-size: 1rem;
+    color: #333;
+  }
+  
+  /* Textarea styling */
+  .upload-textarea {
+    resize: none;
+    height: 80px;
+  }
+  
+  /* File input styling */
+  .upload-file {
+    background: white;
+    cursor: pointer;
+  }
+  
+  /* Submit button */
+  .upload-button {
+    background-color: #ffcc00;
+    color: #333;
+    font-size: 1rem;
+    font-weight: bold;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s;
+    width: 100%;
+  }
+  
+  .upload-button:hover {
+    background-color: #ffdb4d;
+    transform: scale(1.05);
+  }
+  
+  .upload-button:active {
+    transform: scale(0.95);
+  }
+  

@@ -1,0 +1,60 @@
+/* Full-page background */
+.student-dashboard {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(135deg, #1e3c72, #2a5298);
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  /* Dashboard box */
+  .dashboard-box {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 40px;
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    max-width: 500px;
+    width: 90%;
+    text-align: center;
+  }
+  
+  /* Dashboard title */
+  .dashboard-title {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: white;
+    margin-bottom: 20px;
+  }
+  
+  /* Dashboard buttons container */
+  .dashboard-links {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  /* Dashboard buttons */
+  .dashboard-button {
+    background-color: #ffcc00;
+    color: #333;
+    font-size: 1.1rem;
+    font-weight: bold;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s;
+    width: 100%;
+  }
+  
+  .dashboard-button:hover {
+    background-color: #ffdb4d;
+    transform: scale(1.05);
+  }
+  
+  .dashboard-button:active {
+    transform: scale(0.95);
+  }
+  
