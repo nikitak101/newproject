@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import "./Assignments.css"; // Importing the CSS file
+import "./Assignments.css";
+import { FaDownload, FaBookOpen } from "react-icons/fa"; // Importing icons
+import { MdDescription, MdDateRange } from "react-icons/md";
 
 function Assignments() {
   const [assignments, setAssignments] = useState([]);
@@ -17,18 +19,20 @@ function Assignments() {
 
   return (
     <div className="assignments-container">
+      <div className="background-overlay"></div> {/* Glassmorphic Background */}
+      
       <div className="assignments-box">
-        <h2 className="assignments-title">📚 Assignments</h2>
+        <h2 className="assignments-title"><FaBookOpen /> Assignments</h2>
         {assignments.length === 0 ? (
           <p className="no-assignments">No assignments available</p>
         ) : (
           <table className="assignments-table">
             <thead>
               <tr>
-                <th>Title</th>
-                <th>Description</th>
-                <th>Due Date</th>
-                <th>Download</th>
+                <th><FaBookOpen /> Title</th>
+                <th><MdDescription /> Description</th>
+                <th><MdDateRange /> Due Date</th>
+                <th><FaDownload /> Download</th>
               </tr>
             </thead>
             <tbody>
@@ -46,7 +50,7 @@ function Assignments() {
                         download
                         className="download-link"
                       >
-                        📥 Download
+                        <FaDownload /> Download
                       </a>
                     ) : (
                       "No File Available"

@@ -1,0 +1,163 @@
+/* Background styling */
+.attendance-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #1b2735, #3b5366);
+    font-family: 'Poppins', sans-serif;
+    padding: 20px;
+}
+.date-label {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: white;
+    margin-bottom: 10px;
+    display: block;
+  }
+  
+  .date-picker {
+    padding: 8px;
+    font-size: 1rem;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    width: 100%;
+    max-width: 200px;
+    text-align: center;
+  }
+  
+
+/* Glassmorphic Effect */
+.attendance-box {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 30px;
+    border-radius: 15px;
+    backdrop-filter: blur(12px);
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.4);
+    max-width: 800px;
+    width: 100%;
+    text-align: center;
+    color: white;
+}
+
+/* Title */
+.attendance-title {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Subject Buttons */
+.subject-buttons {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 15px;
+}
+
+.subject-button {
+    padding: 14px 20px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    background: linear-gradient(45deg, #ff6f61, #ff3b2d);
+    color: white;
+    border-radius: 10px;
+    transition: 0.3s ease-in-out;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.subject-button:hover {
+    background: linear-gradient(45deg, #ff3b2d, #ff6f61);
+    transform: scale(1.1);
+}
+
+.subject-button.active {
+    background: linear-gradient(45deg, #ffcc00, #ffdb4d);
+    color: #1b2735;
+    font-weight: bold;
+    transform: scale(1.1);
+}
+
+/* Attendance Grid */
+.attendance-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 12px;
+    padding: 15px;
+    justify-content: center;
+}
+
+/* Attendance Item */
+.attendance-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.1);
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
+    text-align: center;
+}
+
+/* Attendance Buttons */
+.attendance-btn {
+    margin-top: 8px;
+    padding: 10px;
+    font-size: 1rem;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: 0.3s ease-in-out;
+    width: 100px;
+}
+
+/* Marked (Present) */
+.present {
+    background: linear-gradient(45deg, #ffcc00, #ffdb4d);
+    color: #1b2735;
+}
+
+/* Unmarked (Absent) */
+.absent {
+    background: linear-gradient(45deg, #ff6f61, #ff3b2d);
+    color: white;
+}
+
+/* Hover Effects */
+.attendance-btn:hover {
+    transform: scale(1.1);
+}
+
+/* Back Button */
+.back-button {
+    margin-top: 20px;
+    padding: 12px 20px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    background: linear-gradient(45deg, #ffcc00, #ffdb4d);
+    color: #1b2735;
+    border-radius: 10px;
+    transition: 0.3s ease-in-out;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.back-button:hover {
+    transform: scale(1.1);
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    .attendance-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}

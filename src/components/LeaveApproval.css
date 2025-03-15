@@ -1,0 +1,39 @@
+.leave-approval-container {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(10px);
+    color: white;
+    text-align: center;
+  }
+  
+  .leave-details {
+    text-align: left;
+    margin-top: 20px;
+  }
+  
+  .leave-details p {
+    margin: 10px 0;
+  }
+  
+  .status {
+    font-weight: bold;
+    padding: 10px;
+    border-radius: 5px;
+  }
+  
+  .status.pending {
+    color: orange;
+  }
+  
+  .status.approved {
+    color: green;
+  }
+  
+  .status.rejected {
+    color: red;
+  }
+  

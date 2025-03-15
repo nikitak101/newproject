@@ -7,15 +7,34 @@
   font-family: 'Poppins', sans-serif;
 }
 
-/* Full-screen background */
+/* Full background styling */
 body, html {
   height: 100%;
-  background: url('https://source.unsplash.com/1600x900/?books,education') no-repeat center center/cover;
+  background: url('https://source.unsplash.com/1600x900/?announcement,meeting') no-repeat center center/cover;
   background-size: cover;
   overflow-x: hidden;
 }
 
-/* Overlay for glassmorphism effect */
+/* Prevent white space at the bottom */
+.notice-container::after {
+  content: '';
+  display: block;
+  height: 50px;
+}
+
+/* Full-page glassmorphic background */
+.notice-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  position: relative;
+  text-align: center;
+  color: white;
+  padding: 20px;
+}
+
+/* Glassmorphic overlay */
 .background-overlay {
   position: absolute;
   top: 0;
@@ -27,35 +46,22 @@ body, html {
   z-index: 1;
 }
 
-/* Main container */
-.upload-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
+/* Glassmorphic notice box */
+.notice-box {
   position: relative;
-  text-align: center;
   z-index: 2;
-  padding: 20px;
-}
-
-/* Glassmorphic box */
-.upload-box {
-  position: relative;
-  z-index: 3;
   background: rgba(255, 255, 255, 0.1);
   padding: 40px;
   border-radius: 15px;
-  backdrop-filter: blur(12px);
+  backdrop-filter: blur(10px);
   box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.2);
-  max-width: 500px;
+  max-width: 600px;
   width: 90%;
-  text-align: center;
   animation: fadeIn 1.5s ease-in-out;
 }
 
 /* Title */
-.upload-title {
+.notice-title {
   font-size: 2rem;
   font-weight: bold;
   color: #ffcc00;
@@ -64,14 +70,15 @@ body, html {
 }
 
 /* Form styling */
-.upload-form {
+.notice-form {
   display: flex;
   flex-direction: column;
   gap: 15px;
 }
 
 /* Input fields */
-.upload-input, .upload-textarea, .upload-file {
+.notice-form input,
+.notice-form textarea {
   width: 100%;
   padding: 12px;
   border-radius: 8px;
@@ -82,33 +89,27 @@ body, html {
   font-size: 1rem;
 }
 
-.upload-input::placeholder, 
-.upload-textarea::placeholder {
+.notice-form input::placeholder,
+.notice-form textarea::placeholder {
   color: rgba(255, 255, 255, 0.8);
 }
 
 /* Disabled date field */
-.upload-input[type="date"] {
+.notice-form input[disabled] {
   background: rgba(255, 255, 255, 0.3);
-  cursor: pointer;
+  color: white;
+  cursor: not-allowed;
   font-weight: bold;
 }
 
 /* Textarea size */
-.upload-textarea {
+.notice-form textarea {
   resize: none;
   height: 100px;
 }
 
-/* File upload */
-.upload-file {
-  cursor: pointer;
-  padding: 10px;
-  background: rgba(255, 255, 255, 0.3);
-}
-
 /* Submit button */
-.upload-button {
+.submit-button {
   background-color: #ffcc00;
   color: #333;
   font-size: 1rem;
@@ -121,12 +122,12 @@ body, html {
   width: 100%;
 }
 
-.upload-button:hover {
+.submit-button:hover {
   background-color: #ffdb4d;
   transform: scale(1.05);
 }
 
-.upload-button:active {
+.submit-button:active {
   transform: scale(0.95);
 }
 

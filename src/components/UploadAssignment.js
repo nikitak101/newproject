@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
-import "./UploadAssignment.css"; // Importing the new CSS file
+import "./UploadAssignment.css"; // Updated CSS
 
 function UploadAssignment() {
   const [formData, setFormData] = useState({
@@ -54,8 +54,10 @@ function UploadAssignment() {
 
   return (
     <div className="upload-container">
+      <div className="background-overlay"></div> {/* Glassmorphic Effect */}
+      
       <div className="upload-box">
-        <h2 className="upload-title">Upload New Assignment</h2>
+        <h2 className="upload-title">📚 Upload Assignment</h2>
         <form onSubmit={handleSubmit} encType="multipart/form-data" className="upload-form">
           <input
             type="number"
@@ -92,9 +94,7 @@ function UploadAssignment() {
             className="upload-input"
           />
           <input type="file" onChange={handleFileChange} required className="upload-file" />
-          <button type="submit" className="upload-button">
-            Upload Assignment
-          </button>
+          <button type="submit" className="upload-button">Upload</button>
         </form>
       </div>
     </div>

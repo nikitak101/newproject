@@ -1,60 +1,135 @@
-/* Full-page background */
-.student-dashboard {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background: linear-gradient(135deg, #1e3c72, #2a5298);
-    font-family: 'Poppins', sans-serif;
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Apply exact background from assignments page */
+body, html {
+  height: 100%;
+  background: url('https://source.unsplash.com/1600x900/?university,college') no-repeat center center/cover;
+  background-size: cover;
+  overflow-x: hidden;
+}
+
+/* Full-page glassmorphic background */
+.dashboard-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  position: relative;
+  text-align: center;
+  color: white;
+  padding: 20px;
+}
+
+/* Prevent white space at the bottom */
+.dashboard-container::after {
+  content: '';
+  display: block;
+  height: 50px;
+}
+
+/* Glassmorphic overlay */
+.background-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(8px);
+  z-index: 1;
+}
+
+/* Adjusted dashboard box */
+.dashboard-box.adjusted-box {
+  position: relative;
+  z-index: 2;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 40px;
+  border-radius: 15px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0px 12px 28px rgba(0, 0, 0, 0.3);
+  max-width: 750px;
+  width: 90%;
+  animation: fadeIn 1.2s ease-in-out;
+}
+
+/* Dashboard title */
+.dashboard-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #ffcc00;
+  text-shadow: 0 0 12px rgba(255, 204, 0, 0.9);
+  margin-bottom: 30px;
+}
+
+/* Grid layout for dashboard items */
+.dashboard-grid.adjusted-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, auto);
+  gap: 30px;
+  justify-content: center;
+  align-items: center;
+  padding: 15px;
+}
+
+/* Assignments, Attendance, and Notices in a uniform size */
+.dashboard-item {
+  width: 230px;
+  height: 230px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  font-size: 1.8rem;
+  font-weight: bold;
+  border-radius: 15px;
+  backdrop-filter: blur(10px);
+  text-decoration: none;
+  transition: background 0.3s ease, transform 0.2s;
+  box-shadow: 0px 12px 24px rgba(0, 0, 0, 0.4);
+}
+
+/* Placing the Notices box in the center below */
+.dashboard-grid .dashboard-item:nth-child(3) {
+  grid-column: span 2;
+  justify-self: center;
+}
+
+/* Adjusted icon size */
+.dashboard-icon {
+  font-size: 4rem;
+  margin-bottom: 15px;
+}
+
+/* Hover effects */
+.dashboard-item:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+  transform: scale(1.05);
+}
+
+/* Click effect */
+.dashboard-item:active {
+  transform: scale(0.95);
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-12px);
   }
-  
-  /* Dashboard box */
-  .dashboard-box {
-    background: rgba(255, 255, 255, 0.1);
-    padding: 40px;
-    border-radius: 15px;
-    backdrop-filter: blur(10px);
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
-    max-width: 500px;
-    width: 90%;
-    text-align: center;
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
-  
-  /* Dashboard title */
-  .dashboard-title {
-    font-size: 1.8rem;
-    font-weight: bold;
-    color: white;
-    margin-bottom: 20px;
-  }
-  
-  /* Dashboard buttons container */
-  .dashboard-links {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-  }
-  
-  /* Dashboard buttons */
-  .dashboard-button {
-    background-color: #ffcc00;
-    color: #333;
-    font-size: 1.1rem;
-    font-weight: bold;
-    padding: 12px 20px;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: background 0.3s ease, transform 0.2s;
-    width: 100%;
-  }
-  
-  .dashboard-button:hover {
-    background-color: #ffdb4d;
-    transform: scale(1.05);
-  }
-  
-  .dashboard-button:active {
-    transform: scale(0.95);
-  }
-  
+}
