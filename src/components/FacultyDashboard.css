@@ -1,129 +1,60 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+import React from "react";
+import { Link, useNavigate } from "react-router-dom";
+import {
+  FaClipboardCheck,
+  FaUpload,
+  FaFileAlt,
+  FaArrowLeft,
+} from "react-icons/fa";
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Poppins', sans-serif;
+function FacultyDashboard() {
+  const navigate = useNavigate();
+
+  return (
+    <div className="min-h-screen bg-gradient-to-tr from-yellow-100 via-orange-100 to-pink-100 flex flex-col items-center justify-center px-6 py-10">
+      <div className="relative bg-white bg-opacity-70 backdrop-blur-lg rounded-3xl shadow-2xl p-8 w-full max-w-5xl">
+        <h1 className="text-4xl font-bold text-center text-yellow-700 mb-10 drop-shadow-sm">
+          🧑‍🏫 Faculty Dashboard
+        </h1>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <Link
+            to="/upload-assignments"
+            className="flex items-center justify-center flex-col gap-2 p-6 bg-white bg-opacity-90 rounded-xl shadow-lg hover:shadow-2xl hover:scale-105 transition-transform text-yellow-800"
+          >
+            <FaUpload size={40} />
+            <span className="font-semibold">Upload Assignments</span>
+          </Link>
+
+          <Link
+            to="/upload-attendance"
+            className="flex items-center justify-center flex-col gap-2 p-6 bg-white bg-opacity-90 rounded-xl shadow-lg hover:shadow-2xl hover:scale-105 transition-transform text-yellow-800"
+          >
+            <FaClipboardCheck size={40} />
+            <span className="font-semibold">Upload Attendance</span>
+          </Link>
+
+          <Link
+            to="/upload-notices"
+            className="flex items-center justify-center flex-col gap-2 p-6 bg-white bg-opacity-90 rounded-xl shadow-lg hover:shadow-2xl hover:scale-105 transition-transform text-yellow-800"
+          >
+            <FaFileAlt size={40} />
+            <span className="font-semibold">Upload Notices</span>
+          </Link>
+        </div>
+
+        <div className="mt-10 text-center">
+          <button
+            onClick={() => navigate("/home")}
+            className="bg-gradient-to-r from-orange-400 to-yellow-500 hover:from-orange-500 hover:to-yellow-600 text-white font-semibold px-6 py-2 rounded-xl shadow-md transition"
+          >
+            <FaArrowLeft className="inline mr-2" />
+            Back to Home
+          </button>
+        </div>
+      </div>
+    </div>
+  );
 }
 
-/* Full background styling */
-body, html {
-  height: 100%;
-  background: url('https://source.unsplash.com/1600x900/?university,lecture') no-repeat center center/cover;
-  background-size: cover;
-  overflow-x: hidden;
-}
-
-/* Full-page glassmorphic background */
-.dashboard-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-  position: relative;
-  text-align: center;
-  color: white;
-  padding: 20px;
-}
-
-/* Prevent white space at the bottom */
-.dashboard-container::after {
-  content: '';
-  display: block;
-  height: 50px;
-}
-
-/* Glassmorphic overlay */
-.background-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.6);
-  backdrop-filter: blur(8px);
-  z-index: 1;
-}
-
-/* Adjusted dashboard box */
-.dashboard-box.adjusted-box {
-  position: relative;
-  z-index: 2;
-  background: rgba(255, 255, 255, 0.1);
-  padding: 40px;
-  border-radius: 15px;
-  backdrop-filter: blur(10px);
-  box-shadow: 0px 12px 28px rgba(0, 0, 0, 0.3);
-  max-width: 750px;
-  width: 90%;
-  animation: fadeIn 1.2s ease-in-out;
-}
-
-/* Dashboard title */
-.dashboard-title {
-  font-size: 2.5rem;
-  font-weight: bold;
-  color: #ffcc00;
-  text-shadow: 0 0 12px rgba(255, 204, 0, 0.9);
-  margin-bottom: 30px;
-}
-
-/* Grid layout for dashboard items */
-.dashboard-grid.adjusted-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: repeat(2, auto);
-  gap: 30px;
-  justify-content: center;
-  align-items: center;
-  padding: 15px;
-}
-
-/* Equal-sized square boxes */
-.dashboard-item {
-  width: 230px;
-  height: 230px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  background: rgba(255, 255, 255, 0.2);
-  color: white;
-  font-size: 1.8rem;
-  font-weight: bold;
-  border-radius: 15px;
-  backdrop-filter: blur(10px);
-  text-decoration: none;
-  transition: background 0.3s ease, transform 0.2s;
-  box-shadow: 0px 12px 24px rgba(0, 0, 0, 0.4);
-}
-
-/* Adjusted icon size */
-.dashboard-icon {
-  font-size: 4rem;
-  margin-bottom: 15px;
-}
-
-/* Hover effects */
-.dashboard-item:hover {
-  background-color: rgba(255, 255, 255, 0.3);
-  transform: scale(1.05);
-}
-
-/* Click effect */
-.dashboard-item:active {
-  transform: scale(0.95);
-}
-
-/* Fade-in animation */
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(-12px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
+export default FacultyDashboard;
